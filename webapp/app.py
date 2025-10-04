@@ -18,7 +18,11 @@ st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__f
 
 # Configure paths relative to the webapp directory
 WEBAPP_DIR = os.path.dirname(os.path.abspath(__file__))
-MODELS_DIR = os.path.join(WEBAPP_DIR, 'models')
+MODELS_DIR = os.paNameError: This app has encountered an error. The original error message is redacted to prevent data leaks. Full error details have been recorded in the logs (if you're on Streamlit Cloud, click on 'Manage app' in the lower right of your app).
+Traceback:
+File "/mount/src/nasa-space-app-challenge25-exoplanet-ai-platform/webapp/app.py", line 13, in <module>
+    st.sidebar.write("Environment Information:")
+    ^^th.join(WEBAPP_DIR, 'models')
 DATA_DIR = os.path.join(WEBAPP_DIR, 'data')
 
 st.sidebar.write("\nDirectory Paths:")
@@ -30,20 +34,23 @@ st.sidebar.write("DATA_DIR:", DATA_DIR)
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(os.path.join(DATA_DIR, 'processed'), exist_ok=True)
 
-import streamlit as st
-import pandas as pd
-import numpy as np
-import joblib
-import matplotlib.pyplot as plt
-import seaborn as sns
-
+# Import local modules after path setup
 from data_preprocessor import DataPreprocessor
-import plotly.express as px
-import plotly.graph_objects as go
 from src.visualization.advanced_plots import AdvancedVisualizations
 from src.models.model_retrainer import ModelRetrainer
 from src.innovation.advanced_features import AdvancedFeatures
-from sklearn.metrics import classification_report
+
+# Print debug information
+st.sidebar.write("Environment Information:")
+st.sidebar.write("Python version:", sys.version)
+st.sidebar.write("Working directory:", os.getcwd())
+st.sidebar.write("Script location:", __file__)
+st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__file__)))
+
+st.sidebar.write("\nDirectory Paths:")
+st.sidebar.write("WEBAPP_DIR:", WEBAPP_DIR)
+st.sidebar.write("MODELS_DIR:", MODELS_DIR)
+st.sidebar.write("DATA_DIR:", DATA_DIR)
 
 # Set page config
 st.set_page_config(
