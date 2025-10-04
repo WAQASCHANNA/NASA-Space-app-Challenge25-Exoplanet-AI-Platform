@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FITSImage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Telescope>
+    <Name>NEOSSat</Name>
+    <Description>The Near-Earth Object Surveillance Satellite (NEOSSat), launched February 25, 2013, is the latest in a proud family of world-leading Canadian satellites. The world's first space telescope dedicated to detecting and tracking asteroids and satellites. It circles the globe every 100 minutes, scanning space near the Sun to pinpoint asteroids that may someday pass close to Earth. NEOSSat is also sweeping the skies in search of satellites and space debris as part of Canada's commitment to keeping orbital space safe for everyone.</Description>
+  </Telescope>
+  <Image>
+    <PrimeObjectName>Unknown object</PrimeObjectName>
+    <Detector>NEOSSat_Science</Detector>
+    <ImageFile>ftp://ftp.asc-csa.gc.ca/users/OpenData_DonneesOuvertes/pub/NEOSSAT/NESS/2015/359/NEOS_SCI_2015359004814.fits</ImageFile>
+  </Image>
+  <ImagingSpecification>
+    <SatellitePointingState>16 - FINE_POINT</SatellitePointingState>
+    <ImageSpecifications />
+    <OperationalAmplifier>RIGHT</OperationalAmplifier>
+    <BinningXdirection>1</BinningXdirection>
+    <BinningYdirection>1</BinningYdirection>
+    <CcdTemperatureK>243.625</CcdTemperatureK>
+    <DateOfObservation>2015-12-25T00:48:14.054</DateOfObservation>
+    <ActualStartTimeOfObservation>2015-12-25T00:48:14.054</ActualStartTimeOfObservation>
+    <JdDateOfObs>2457381.533496</JdDateOfObs>
+    <RequestedExposureStartTime>2015-12-25T00:48:14.005</RequestedExposureStartTime>
+    <ActualExposureStartTime>2015-12-25T00:48:14.054</ActualExposureStartTime>
+    <ExposureActualLengthOfExposureSeconds>100.024</ExposureActualLengthOfExposureSeconds>
+    <ShutterState>0</ShutterState>
+    <Corner1x>-16</Corner1x>
+    <Corner1y>0</Corner1y>
+    <Corner2x>1071</Corner2x>
+    <Corner2y>1029</Corner2y>
+  </ImagingSpecification>
+  <Position>
+    <EcefPositionExpStartX>0</EcefPositionExpStartX>
+    <EcefPositionExpStartY>0</EcefPositionExpStartY>
+    <EcefPositionExpStartZ>0</EcefPositionExpStartZ>
+    <EcefPositionExpMiddleX>0</EcefPositionExpMiddleX>
+    <EcefPositionExpMiddleY>0</EcefPositionExpMiddleY>
+    <EcefPositionExpMiddleZ>0</EcefPositionExpMiddleZ>
+    <EcefPositionExpEndX>0</EcefPositionExpEndX>
+    <EcefPositionExpEndY>0</EcefPositionExpEndY>
+    <EcefPositionExpEndZ>0</EcefPositionExpEndZ>
+    <J2000PositionExpStartX>0</J2000PositionExpStartX>
+    <J2000PositionExpStartY>0</J2000PositionExpStartY>
+    <J2000PositionExpStartZ>0</J2000PositionExpStartZ>
+    <J2000VelocityExpStartX>0</J2000VelocityExpStartX>
+    <J2000VelocityExpStartY>0</J2000VelocityExpStartY>
+    <J2000VelocityExpStartZ>0</J2000VelocityExpStartZ>
+    <J2000PositionExpMiddleX>0</J2000PositionExpMiddleX>
+    <J2000PositionExpMiddleY>0</J2000PositionExpMiddleY>
+    <J2000PositionExpMiddleZ>0</J2000PositionExpMiddleZ>
+    <J2000VelocityExpMiddleX>0</J2000VelocityExpMiddleX>
+    <J2000VelocityExpMiddleY>0</J2000VelocityExpMiddleY>
+    <J2000VelocityExpMiddleZ>0</J2000VelocityExpMiddleZ>
+    <J2000PositionExpEndX>0</J2000PositionExpEndX>
+    <J2000PositionExpEndY>0</J2000PositionExpEndY>
+    <J2000PositionExpEndZ>0</J2000PositionExpEndZ>
+    <J2000VelocityExpEndX>0</J2000VelocityExpEndX>
+    <J2000VelocityExpEndY>0</J2000VelocityExpEndY>
+    <J2000VelocityExpEndZ>0</J2000VelocityExpEndZ>
+    <EcefVelocityExpEndX>0</EcefVelocityExpEndX>
+    <EcefVelocityExpEndY>0</EcefVelocityExpEndY>
+    <EcefVelocityExpEndZ>0</EcefVelocityExpEndZ>
+    <EcefVelocityExpMiddleX>0</EcefVelocityExpMiddleX>
+    <EcefVelocityExpMiddleY>0</EcefVelocityExpMiddleY>
+    <EcefVelocityExpMiddleZ>0</EcefVelocityExpMiddleZ>
+    <EcefVelocityExpStartX>0</EcefVelocityExpStartX>
+    <EcefVelocityExpStartY>0</EcefVelocityExpStartY>
+    <EcefVelocityExpStartZ>0</EcefVelocityExpStartZ>
+  </Position>
+  <Attitude>
+    <ActualRaAtStartOfExposure>13 03 56.6</ActualRaAtStartOfExposure>
+    <ActualDecAtStartOfExposure>18 24 45.9</ActualDecAtStartOfExposure>
+    <ActualRollAtStartOfExposure>71.24099</ActualRollAtStartOfExposure>
+    <MinimumEarthLimbAngle>87.91294</MinimumEarthLimbAngle>
+    <MaximumEarthLimbAngle>93.86187</MaximumEarthLimbAngle>
+    <EarthLimbAngle>87.91294</EarthLimbAngle>
+    <MinimumSunAngle>93.86187</MinimumSunAngle>
+    <MaximumSunAngle>87.91294</MaximumSunAngle>
+  </Attitude>
+</FITSImage>

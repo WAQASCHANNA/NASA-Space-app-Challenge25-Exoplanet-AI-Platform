@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FITSImage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Telescope>
+    <Name>NEOSSat</Name>
+    <Description>The Near-Earth Object Surveillance Satellite (NEOSSat), launched February 25, 2013, is the latest in a proud family of world-leading Canadian satellites. The world's first space telescope dedicated to detecting and tracking asteroids and satellites. It circles the globe every 100 minutes, scanning space near the Sun to pinpoint asteroids that may someday pass close to Earth. NEOSSat is also sweeping the skies in search of satellites and space debris as part of Canada's commitment to keeping orbital space safe for everyone.</Description>
+  </Telescope>
+  <Image>
+    <PrimeObjectName>NGC_7000_North_American_Nebula</PrimeObjectName>
+    <Detector>NEOSSat_Science</Detector>
+    <ImageFile>ftp://ftp.asc-csa.gc.ca/users/OpenData_DonneesOuvertes/pub/NEOSSAT/ASTRO/2017/154/NGC_7000_North_American_Nebula/FINE_POINT/NEOS_SCI_2017154021300.fits</ImageFile>
+  </Image>
+  <ImagingSpecification>
+    <SatellitePointingState>16 - FINE_POINT</SatellitePointingState>
+    <ImageSpecifications />
+    <OperationalAmplifier>RIGHT</OperationalAmplifier>
+    <BinningXdirection>1</BinningXdirection>
+    <BinningYdirection>1</BinningYdirection>
+    <CcdTemperatureK>241.134</CcdTemperatureK>
+    <DateOfObservation>2017-06-03T02:13:00.054</DateOfObservation>
+    <ActualStartTimeOfObservation>2017-06-03T02:13:00.054</ActualStartTimeOfObservation>
+    <JdDateOfObs>2457907.59236174</JdDateOfObs>
+    <RequestedExposureStartTime>2017-06-03T02:13:00.005</RequestedExposureStartTime>
+    <ActualExposureStartTime>2017-06-03T02:13:00.054</ActualExposureStartTime>
+    <ExposureActualLengthOfExposureSeconds>12.0031</ExposureActualLengthOfExposureSeconds>
+    <ShutterState>0</ShutterState>
+    <Corner1x>-128</Corner1x>
+    <Corner1y>0</Corner1y>
+    <Corner2x>1071</Corner2x>
+    <Corner2y>1029</Corner2y>
+  </ImagingSpecification>
+  <Position>
+    <EcefPositionExpStartX>1804.9517892080619</EcefPositionExpStartX>
+    <EcefPositionExpStartY>2539.0289883993428</EcefPositionExpStartY>
+    <EcefPositionExpStartZ>6433.0692036325463</EcefPositionExpStartZ>
+    <EcefPositionExpMiddleX>1796.5186470110702</EcefPositionExpMiddleX>
+    <EcefPositionExpMiddleY>2498.435613664632</EcefPositionExpMiddleY>
+    <EcefPositionExpMiddleZ>6451.3053994663114</EcefPositionExpMiddleZ>
+    <EcefPositionExpEndX>1787.9812113180205</EcefPositionExpEndX>
+    <EcefPositionExpEndY>2457.7486485209206</EcefPositionExpEndY>
+    <EcefPositionExpEndZ>6469.2970243602886</EcefPositionExpEndZ>
+    <J2000PositionExpStartX>2923.6694716280963</J2000PositionExpStartX>
+    <J2000PositionExpStartY>1075.4887195909876</J2000PositionExpStartY>
+    <J2000PositionExpStartZ>6433.0692036325463</J2000PositionExpStartZ>
+    <J2000VelocityExpStartX>-5.0529820013956988</J2000VelocityExpStartX>
+    <J2000VelocityExpStartY>-4.5740490994155</J2000VelocityExpStartY>
+    <J2000VelocityExpStartZ>3.050403207848035</J2000VelocityExpStartZ>
+    <J2000PositionExpMiddleX>2893.3213163348714</J2000PositionExpMiddleX>
+    <J2000PositionExpMiddleY>1048.0226739572477</J2000PositionExpMiddleY>
+    <J2000PositionExpMiddleZ>6451.3053994663114</J2000PositionExpMiddleZ>
+    <J2000VelocityExpMiddleX>-5.0700933065048082</J2000VelocityExpMiddleX>
+    <J2000VelocityExpMiddleY>-4.5782135021625354</J2000VelocityExpMiddleY>
+    <J2000VelocityExpMiddleZ>3.0149690305940808</J2000VelocityExpMiddleZ>
+    <J2000PositionExpEndX>2862.8587157387938</J2000PositionExpEndX>
+    <J2000PositionExpEndY>1020.5122268013706</J2000PositionExpEndY>
+    <J2000PositionExpEndZ>6469.2970243602886</J2000PositionExpEndZ>
+    <J2000VelocityExpEndX>-5.0870109107256072</J2000VelocityExpEndX>
+    <J2000VelocityExpEndY>-4.582260521271702</J2000VelocityExpEndY>
+    <J2000VelocityExpEndZ>2.9797241108620538</J2000VelocityExpEndZ>
+    <EcefVelocityExpEndX>-1.4298593878219836</EcefVelocityExpEndX>
+    <EcefVelocityExpEndY>-6.7851280106119809</EcefVelocityExpEndY>
+    <EcefVelocityExpEndZ>2.9797241108620538</EcefVelocityExpEndZ>
+    <EcefVelocityExpMiddleX>-1.4152188779179937</EcefVelocityExpMiddleX>
+    <EcefVelocityExpMiddleY>-6.77285438959999</EcefVelocityExpMiddleY>
+    <EcefVelocityExpMiddleZ>3.0149690305940808</EcefVelocityExpMiddleZ>
+    <EcefVelocityExpStartX>-1.4004916684780269</EcefVelocityExpStartX>
+    <EcefVelocityExpStartY>-6.7603668816220015</EcefVelocityExpStartY>
+    <EcefVelocityExpStartZ>3.050403207848035</EcefVelocityExpStartZ>
+  </Position>
+  <Attitude>
+    <ActualRaAtStartOfExposure>20 53 32.4</ActualRaAtStartOfExposure>
+    <ActualDecAtStartOfExposure>44 26 49.5</ActualDecAtStartOfExposure>
+    <ActualRollAtStartOfExposure>165.02851</ActualRollAtStartOfExposure>
+    <MinimumEarthLimbAngle>91.98197</MinimumEarthLimbAngle>
+    <MaximumEarthLimbAngle>92.25085</MaximumEarthLimbAngle>
+    <EarthLimbAngle>91.98197</EarthLimbAngle>
+    <MinimumSunAngle>92.25085</MinimumSunAngle>
+    <MaximumSunAngle>91.98197</MaximumSunAngle>
+  </Attitude>
+</FITSImage>

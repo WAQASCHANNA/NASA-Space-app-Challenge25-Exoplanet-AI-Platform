@@ -1,0 +1,8 @@
+Using 47 features from trained model
+Batch template created: ../data/batch_template.csv
+Sample data includes 3 test objects:
+   - 1 likely exoplanet
+   - 1 likely false positive
+   - 1 borderline case
+
+You can add more rows to this file for batch analysis!
