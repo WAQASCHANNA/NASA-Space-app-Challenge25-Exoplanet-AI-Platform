@@ -119,13 +119,13 @@ def main():
         
         if dataset_option == "Kepler":
             model_path = "../../models/exoplanet_classifier.pkl"
-            processed_data_path = "../../data/processed/kepler_processed.pkl"
+            processed_data_path = "data/processed/kepler_processed.pkl"
         elif dataset_option == "TESS":
             model_path = "../../models/exoplanet_classifier_tess.pkl"
-            processed_data_path = "../../data/processed/tess_processed.pkl"
+            processed_data_path = "data/processed/tess_processed.pkl"
         elif dataset_option == "K2":
             model_path = "../../models/exoplanet_classifier_k2.pkl"
-            processed_data_path = "../../data/processed/k2_processed.pkl"
+            processed_data_path = "data/processed/k2_processed.pkl"
         else:
             st.error("❌ Invalid dataset selection")
             return
@@ -578,7 +578,7 @@ def model_retraining(predictor, processed_data):
     # Initialize retrainer
     retrainer = ModelRetrainer(
         model_path="../../models/exoplanet_classifier.pkl",
-        processed_data_path="../../data/processed/kepler_processed.pkl"
+        processed_data_path="data/processed/kepler_processed.pkl"
     )
 
     tab1, tab2, tab3 = st.tabs(["📤 Upload New Data", "⚙️ Hyperparameters", "📊 Retraining History"])
