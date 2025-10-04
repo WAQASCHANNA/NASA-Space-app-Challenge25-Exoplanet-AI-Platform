@@ -331,8 +331,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions and support:
 - GitHub Issues: [Project Issues](https://github.com/yourusername/exoplanet-ai-platform/issues)
-- Email: exonet.support@example.com
-- Discord: [ExoNet Community](https://discord.gg/exonet)
+- Email: waqasalichanna107@gmail.com
+- Discord: waqasalichanna107
+- LinkedIn: (https://www.linkedin.com/in/waqas-ali-143a1597/)
 
 Project Link: [https://github.com/WAQASCHANNA/NASA-Space-app-Challenge25-Exoplanet-AI-Platform]
 
