@@ -151,7 +151,20 @@ def main():
         # Determine dataset selection for dashboard
         dataset_option = st.sidebar.selectbox("Select Dataset", ["Kepler", "TESS", "K2"], index=0)
         
-        # Debug information
+        # Set paths based on dataset selection
+        if dataset_option == "Kepler":
+            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier.pkl")
+            processed_data_path = os.path.join(DATA_DIR, "processed", "kepler_processed.pkl")
+        elif dataset_option == "TESS":
+            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_tess.pkl")
+            processed_data_path = os.path.join(DATA_DIR, "processed", "tess_processed.pkl")
+        elif dataset_option == "K2":
+            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_k2.pkl")
+            processed_data_path = os.path.join(DATA_DIR, "processed", "k2_processed.pkl")
+        else:
+            st.error("❌ Invalid dataset selection")
+            return
+
         # Debug information about file paths
         st.sidebar.write("\nFile Paths:")
         st.sidebar.write(f"Looking for model at: {model_path}")
@@ -165,19 +178,6 @@ def main():
             st.sidebar.write("Models directory contents:", os.listdir(MODELS_DIR))
         if os.path.exists(os.path.join(DATA_DIR, "processed")):
             st.sidebar.write("Data/processed directory contents:", os.listdir(os.path.join(DATA_DIR, "processed")))
-        
-        if dataset_option == "Kepler":
-            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier.pkl")
-            processed_data_path = os.path.join(DATA_DIR, "processed", "kepler_processed.pkl")
-        elif dataset_option == "TESS":
-            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_tess.pkl")
-            processed_data_path = os.path.join(DATA_DIR, "processed", "tess_processed.pkl")
-        elif dataset_option == "K2":
-            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_k2.pkl")
-            processed_data_path = os.path.join(DATA_DIR, "processed", "k2_processed.pkl")
-        else:
-            st.error("❌ Invalid dataset selection")
-            return
             
         st.sidebar.write(f"Attempting to load model from: {model_path}")
         st.sidebar.write(f"Model file exists: {os.path.exists(model_path)}")
