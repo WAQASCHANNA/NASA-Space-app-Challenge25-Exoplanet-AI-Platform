@@ -117,6 +117,10 @@ def main():
         # Determine dataset selection for dashboard
         dataset_option = st.sidebar.selectbox("Select Dataset", ["Kepler", "TESS", "K2"], index=0)
         
+        # Debug information
+        st.sidebar.write("Current working directory:", os.getcwd())
+        st.sidebar.write("List of files in models/:", os.listdir("models") if os.path.exists("models") else "models directory not found")
+        
         if dataset_option == "Kepler":
             model_path = "models/exoplanet_classifier.pkl"
             processed_data_path = "data/processed/kepler_processed.pkl"
@@ -129,6 +133,9 @@ def main():
         else:
             st.error("❌ Invalid dataset selection")
             return
+            
+        st.sidebar.write(f"Attempting to load model from: {model_path}")
+        st.sidebar.write(f"Model file exists: {os.path.exists(model_path)}")
         
         processed_data = joblib.load(processed_data_path)
         feature_names = processed_data['feature_names']
@@ -139,6 +146,9 @@ def main():
         
     except Exception as e:
         st.error(f"❌ Error loading model: {e}")
+        st.error(f"Full error details: {str(e.__class__.__name__)}: {str(e)}")
+        import traceback
+        st.error(f"Stack trace: {traceback.format_exc()}")
         return
     
     if app_mode == "🔍 Single Prediction":
