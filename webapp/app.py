@@ -4,9 +4,18 @@ import sys
 import os
 
 # Add parent directory to path for imports
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 sys.path.append(os.path.join(parent_dir, 'src'))
+
+# Configure paths for models and data
+MODELS_DIR = os.path.join(current_dir, 'models')
+DATA_DIR = os.path.join(current_dir, 'data')
+
+# Ensure directories exist
+os.makedirs(MODELS_DIR, exist_ok=True)
+os.makedirs(os.path.join(DATA_DIR, 'processed'), exist_ok=True)
 
 import streamlit as st
 import pandas as pd
@@ -119,20 +128,21 @@ def main():
         
         # Debug information
         st.sidebar.write("Current working directory:", os.getcwd())
-        st.sidebar.write("List of files in models/:", os.listdir("models") if os.path.exists("models") else "models directory not found")
-        
-        # Get the repository root directory
-        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        st.sidebar.write("Current script directory:", current_dir)
+        st.sidebar.write("Models directory:", MODELS_DIR)
+        st.sidebar.write("Data directory:", DATA_DIR)
+        st.sidebar.write("List of files in models/:", os.listdir(MODELS_DIR) if os.path.exists(MODELS_DIR) else "models directory not found")
+        st.sidebar.write("List of files in data/processed/:", os.listdir(os.path.join(DATA_DIR, "processed")) if os.path.exists(os.path.join(DATA_DIR, "processed")) else "processed data directory not found")
         
         if dataset_option == "Kepler":
-            model_path = os.path.join(repo_root, "webapp", "models", "exoplanet_classifier.pkl")
-            processed_data_path = os.path.join(repo_root, "webapp", "data", "processed", "kepler_processed.pkl")
+            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier.pkl")
+            processed_data_path = os.path.join(DATA_DIR, "processed", "kepler_processed.pkl")
         elif dataset_option == "TESS":
-            model_path = os.path.join(repo_root, "webapp", "models", "exoplanet_classifier_tess.pkl")
-            processed_data_path = os.path.join(repo_root, "webapp", "data", "processed", "tess_processed.pkl")
+            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_tess.pkl")
+            processed_data_path = os.path.join(DATA_DIR, "processed", "tess_processed.pkl")
         elif dataset_option == "K2":
-            model_path = os.path.join(repo_root, "webapp", "models", "exoplanet_classifier_k2.pkl")
-            processed_data_path = os.path.join(repo_root, "webapp", "data", "processed", "k2_processed.pkl")
+            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_k2.pkl")
+            processed_data_path = os.path.join(DATA_DIR, "processed", "k2_processed.pkl")
         else:
             st.error("❌ Invalid dataset selection")
             return
