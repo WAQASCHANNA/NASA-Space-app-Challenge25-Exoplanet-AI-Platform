@@ -43,7 +43,6 @@ DATA_DIR = os.path.join(WEBAPP_DIR, 'data')
 # Ensure directories exist
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(os.path.join(DATA_DIR, 'processed'), exist_ok=True)
-st.sidebar.write("DATA_DIR:", DATA_DIR)
 
 # Set page config
 st.set_page_config(
