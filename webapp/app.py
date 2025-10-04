@@ -1,7 +1,27 @@
 # webapp/app.py
 
-import sys
+# Standard library imports
 import os
+import sys
+
+# Third-party imports
+import streamlit as st
+import pandas as pd
+import numpy as np
+import joblib
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+import plotly.graph_objects as go
+from sklearn.metrics import classification_report
+
+# Set page config first
+st.set_page_config(
+    page_title="ExoNet - Exoplanet Detection AI",
+    page_icon="🪐",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Add parent directory to path for imports
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -9,34 +29,20 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 sys.path.append(os.path.join(parent_dir, 'src'))
 
-# Print all environment information
-st.sidebar.write("Environment Information:")
-st.sidebar.write("Python version:", sys.version)
-st.sidebar.write("Working directory:", os.getcwd())
-st.sidebar.write("Script location:", __file__)
-st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__file__)))
+# Local imports
+from data_preprocessor import DataPreprocessor
+from src.visualization.advanced_plots import AdvancedVisualizations
+from src.models.model_retrainer import ModelRetrainer
+from src.innovation.advanced_features import AdvancedFeatures
 
 # Configure paths relative to the webapp directory
 WEBAPP_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(WEBAPP_DIR, 'models')
 DATA_DIR = os.path.join(WEBAPP_DIR, 'data')
 
-# Print debug information
-st.sidebar.write("Environment Information:")
-st.sidebar.write("Python version:", sys.version)
-st.sidebar.write("Working directory:", os.getcwd())
-st.sidebar.write("Script location:", __file__)
-st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__file__)))
-
 # Ensure directories exist
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(os.path.join(DATA_DIR, 'processed'), exist_ok=True)
-
-# Import local modules after path setup
-from data_preprocessor import DataPreprocessor
-from src.visualization.advanced_plots import AdvancedVisualizations
-from src.models.model_retrainer import ModelRetrainer
-from src.innovation.advanced_features import AdvancedFeatures
 
 # Print debug information
 st.sidebar.write("Environment Information:")
@@ -48,6 +54,7 @@ st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__f
 st.sidebar.write("\nDirectory Paths:")
 st.sidebar.write("WEBAPP_DIR:", WEBAPP_DIR)
 st.sidebar.write("MODELS_DIR:", MODELS_DIR)
+st.sidebar.write("DATA_DIR:", DATA_DIR)
 st.sidebar.write("DATA_DIR:", DATA_DIR)
 
 # Set page config
