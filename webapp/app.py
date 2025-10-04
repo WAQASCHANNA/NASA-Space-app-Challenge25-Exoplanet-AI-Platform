@@ -43,18 +43,6 @@ DATA_DIR = os.path.join(WEBAPP_DIR, 'data')
 # Ensure directories exist
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(os.path.join(DATA_DIR, 'processed'), exist_ok=True)
-
-# Print debug information
-st.sidebar.write("Environment Information:")
-st.sidebar.write("Python version:", sys.version)
-st.sidebar.write("Working directory:", os.getcwd())
-st.sidebar.write("Script location:", __file__)
-st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__file__)))
-
-st.sidebar.write("\nDirectory Paths:")
-st.sidebar.write("WEBAPP_DIR:", WEBAPP_DIR)
-st.sidebar.write("MODELS_DIR:", MODELS_DIR)
-st.sidebar.write("DATA_DIR:", DATA_DIR)
 st.sidebar.write("DATA_DIR:", DATA_DIR)
 
 # Set page config
@@ -208,22 +196,7 @@ def main():
             st.error(f"Tried locations: {data_locations}")
             return
 
-        # Debug information about file paths
-        st.sidebar.write("\nFile Paths:")
-        st.sidebar.write(f"Looking for model at: {model_path}")
-        st.sidebar.write(f"Model file exists: {os.path.exists(model_path)}")
-        st.sidebar.write(f"Looking for data at: {processed_data_path}")
-        st.sidebar.write(f"Data file exists: {os.path.exists(processed_data_path)}")
-        
-        # Directory contents
-        st.sidebar.write("\nDirectory Contents:")
-        if os.path.exists(MODELS_DIR):
-            st.sidebar.write("Models directory contents:", os.listdir(MODELS_DIR))
-        if os.path.exists(os.path.join(DATA_DIR, "processed")):
-            st.sidebar.write("Data/processed directory contents:", os.listdir(os.path.join(DATA_DIR, "processed")))
-            
-        st.sidebar.write(f"Attempting to load model from: {model_path}")
-        st.sidebar.write(f"Model file exists: {os.path.exists(model_path)}")
+
         
         processed_data = joblib.load(processed_data_path)
         feature_names = processed_data['feature_names']
