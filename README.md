@@ -46,7 +46,7 @@ lightkurve>=2.4.0
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/exoplanet-ai-platform.git
+git clone https://github.com/WAQASCHANNA/NASA-Space-app-Challenge25-Exoplanet-AI-Platform.git
 cd exoplanet-ai-platform
 ```
 
@@ -334,7 +334,7 @@ For questions and support:
 - Email: exonet.support@example.com
 - Discord: [ExoNet Community](https://discord.gg/exonet)
 
-Project Link: [https://github.com/yourusername/exoplanet-ai-platform]
+Project Link: [https://github.com/WAQASCHANNA/NASA-Space-app-Challenge25-Exoplanet-AI-Platform]
 
 ---
 *Built with ❤️ for NASA Space Apps Challenge 2025*
