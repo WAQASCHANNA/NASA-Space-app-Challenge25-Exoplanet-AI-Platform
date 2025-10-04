@@ -9,9 +9,22 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 sys.path.append(os.path.join(parent_dir, 'src'))
 
-# Configure paths for models and data
-MODELS_DIR = os.path.join(current_dir, 'models')
-DATA_DIR = os.path.join(current_dir, 'data')
+# Print all environment information
+st.sidebar.write("Environment Information:")
+st.sidebar.write("Python version:", sys.version)
+st.sidebar.write("Working directory:", os.getcwd())
+st.sidebar.write("Script location:", __file__)
+st.sidebar.write("Contents of script directory:", os.listdir(os.path.dirname(__file__)))
+
+# Configure paths relative to the webapp directory
+WEBAPP_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(WEBAPP_DIR, 'models')
+DATA_DIR = os.path.join(WEBAPP_DIR, 'data')
+
+st.sidebar.write("\nDirectory Paths:")
+st.sidebar.write("WEBAPP_DIR:", WEBAPP_DIR)
+st.sidebar.write("MODELS_DIR:", MODELS_DIR)
+st.sidebar.write("DATA_DIR:", DATA_DIR)
 
 # Ensure directories exist
 os.makedirs(MODELS_DIR, exist_ok=True)
@@ -127,12 +140,19 @@ def main():
         dataset_option = st.sidebar.selectbox("Select Dataset", ["Kepler", "TESS", "K2"], index=0)
         
         # Debug information
-        st.sidebar.write("Current working directory:", os.getcwd())
-        st.sidebar.write("Current script directory:", current_dir)
-        st.sidebar.write("Models directory:", MODELS_DIR)
-        st.sidebar.write("Data directory:", DATA_DIR)
-        st.sidebar.write("List of files in models/:", os.listdir(MODELS_DIR) if os.path.exists(MODELS_DIR) else "models directory not found")
-        st.sidebar.write("List of files in data/processed/:", os.listdir(os.path.join(DATA_DIR, "processed")) if os.path.exists(os.path.join(DATA_DIR, "processed")) else "processed data directory not found")
+        # Debug information about file paths
+        st.sidebar.write("\nFile Paths:")
+        st.sidebar.write(f"Looking for model at: {model_path}")
+        st.sidebar.write(f"Model file exists: {os.path.exists(model_path)}")
+        st.sidebar.write(f"Looking for data at: {processed_data_path}")
+        st.sidebar.write(f"Data file exists: {os.path.exists(processed_data_path)}")
+        
+        # Directory contents
+        st.sidebar.write("\nDirectory Contents:")
+        if os.path.exists(MODELS_DIR):
+            st.sidebar.write("Models directory contents:", os.listdir(MODELS_DIR))
+        if os.path.exists(os.path.join(DATA_DIR, "processed")):
+            st.sidebar.write("Data/processed directory contents:", os.listdir(os.path.join(DATA_DIR, "processed")))
         
         if dataset_option == "Kepler":
             model_path = os.path.join(MODELS_DIR, "exoplanet_classifier.pkl")
