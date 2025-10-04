@@ -118,7 +118,7 @@ def main():
         dataset_option = st.sidebar.selectbox("Select Dataset", ["Kepler", "TESS", "K2"], index=0)
         
         if dataset_option == "Kepler":
-            model_path = "../../models/exoplanet_classifier.pkl"
+            model_path = "models/exoplanet_classifier.pkl"
             processed_data_path = "data/processed/kepler_processed.pkl"
         elif dataset_option == "TESS":
             model_path = "../../models/exoplanet_classifier_tess.pkl"
@@ -577,7 +577,7 @@ def model_retraining(predictor, processed_data):
 
     # Initialize retrainer
     retrainer = ModelRetrainer(
-        model_path="../../models/exoplanet_classifier.pkl",
+        model_path="models/exoplanet_classifier.pkl",
         processed_data_path="data/processed/kepler_processed.pkl"
     )
 
