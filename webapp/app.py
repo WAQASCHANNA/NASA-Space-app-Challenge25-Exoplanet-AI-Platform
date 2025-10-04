@@ -121,15 +121,18 @@ def main():
         st.sidebar.write("Current working directory:", os.getcwd())
         st.sidebar.write("List of files in models/:", os.listdir("models") if os.path.exists("models") else "models directory not found")
         
+        # Get the repository root directory
+        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        
         if dataset_option == "Kepler":
-            model_path = "models/exoplanet_classifier.pkl"
-            processed_data_path = "data/processed/kepler_processed.pkl"
+            model_path = os.path.join(repo_root, "webapp", "models", "exoplanet_classifier.pkl")
+            processed_data_path = os.path.join(repo_root, "webapp", "data", "processed", "kepler_processed.pkl")
         elif dataset_option == "TESS":
-            model_path = "models/exoplanet_classifier_tess.pkl"
-            processed_data_path = "data/processed/tess_processed.pkl"
+            model_path = os.path.join(repo_root, "webapp", "models", "exoplanet_classifier_tess.pkl")
+            processed_data_path = os.path.join(repo_root, "webapp", "data", "processed", "tess_processed.pkl")
         elif dataset_option == "K2":
-            model_path = "models/exoplanet_classifier_k2.pkl"
-            processed_data_path = "data/processed/k2_processed.pkl"
+            model_path = os.path.join(repo_root, "webapp", "models", "exoplanet_classifier_k2.pkl")
+            processed_data_path = os.path.join(repo_root, "webapp", "data", "processed", "k2_processed.pkl")
         else:
             st.error("❌ Invalid dataset selection")
             return
