@@ -151,18 +151,61 @@ def main():
         # Determine dataset selection for dashboard
         dataset_option = st.sidebar.selectbox("Select Dataset", ["Kepler", "TESS", "K2"], index=0)
         
-        # Set paths based on dataset selection
-        if dataset_option == "Kepler":
-            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier.pkl")
-            processed_data_path = os.path.join(DATA_DIR, "processed", "kepler_processed.pkl")
-        elif dataset_option == "TESS":
-            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_tess.pkl")
-            processed_data_path = os.path.join(DATA_DIR, "processed", "tess_processed.pkl")
-        elif dataset_option == "K2":
-            model_path = os.path.join(MODELS_DIR, "exoplanet_classifier_k2.pkl")
-            processed_data_path = os.path.join(DATA_DIR, "processed", "k2_processed.pkl")
-        else:
-            st.error("❌ Invalid dataset selection")
+        # Set paths based on dataset selection - try multiple locations
+        possible_model_names = {
+            "Kepler": "exoplanet_classifier.pkl",
+            "TESS": "exoplanet_classifier_tess.pkl", 
+            "K2": "exoplanet_classifier_k2.pkl"
+        }
+        
+        possible_data_names = {
+            "Kepler": "kepler_processed.pkl",
+            "TESS": "tess_processed.pkl",
+            "K2": "k2_processed.pkl"
+        }
+        
+        model_filename = possible_model_names[dataset_option]
+        data_filename = possible_data_names[dataset_option]
+        
+        # Try multiple possible locations for model files
+        model_locations = [
+            os.path.join(MODELS_DIR, model_filename),
+            os.path.join(os.path.dirname(__file__), "models", model_filename),
+            os.path.join("models", model_filename),
+            model_filename
+        ]
+        
+        # Try multiple possible locations for data files  
+        data_locations = [
+            os.path.join(DATA_DIR, "processed", data_filename),
+            os.path.join(os.path.dirname(__file__), "data", "processed", data_filename),
+            os.path.join("data", "processed", data_filename),
+            os.path.join("processed", data_filename),
+            data_filename
+        ]
+        
+        # Find the actual model file
+        model_path = None
+        for path in model_locations:
+            if os.path.exists(path):
+                model_path = path
+                break
+        
+        # Find the actual data file
+        processed_data_path = None
+        for path in data_locations:
+            if os.path.exists(path):
+                processed_data_path = path
+                break
+        
+        if not model_path:
+            st.error(f"❌ Could not find model file {model_filename} in any expected location")
+            st.error(f"Tried locations: {model_locations}")
+            return
+            
+        if not processed_data_path:
+            st.error(f"❌ Could not find data file {data_filename} in any expected location") 
+            st.error(f"Tried locations: {data_locations}")
             return
 
         # Debug information about file paths
